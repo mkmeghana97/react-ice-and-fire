@@ -5,7 +5,8 @@ import Aliases from '../Aliases/Aliases';
 import TvSeries from '../TvSeries/TvSeries';
 import banner from '../../resources/images/banner.jpg';
 import classes from './Home.module.css';
-import loadingIcon from '../../resources/images/loading_icon.gif'
+import loadingIcon from '../../resources/images/loading_icon.gif';
+import API_URL from '../../Services/ApiUrl'
 
 const Home = () => {
     const [ data, setData ] = useState('')
@@ -14,7 +15,7 @@ const Home = () => {
 
     useEffect(() => {
         setDataLoaded(false)
-        axios.get('https://anapioficeandfire.com/api/characters/583')
+        axios.get(`${API_URL}/characters/583`)
         .then(response => {
             setData(response.data)
             setDataLoaded(true)

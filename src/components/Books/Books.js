@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Characters from '../Characters/Characters';
 import classes from './Books.module.css';
-import loadingIcon from '../../resources/images/loading_icon.gif'
+import loadingIcon from '../../resources/images/loading_icon.gif';
+import API_URL from '../../Services/ApiUrl'
 
 const Books = () => {
     const [ data, setData ] = useState('')
@@ -10,7 +11,7 @@ const Books = () => {
     const [ hasError, setHasError ] = useState(false)
 
     useEffect(() => {
-        axios.get('https://anapioficeandfire.com/api/books/5')  
+        axios.get(`${API_URL}/books/5`)  
         .then((response) => {
             setData(response.data)
             setisDataLoading(true)

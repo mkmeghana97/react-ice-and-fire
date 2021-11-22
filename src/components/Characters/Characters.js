@@ -3,7 +3,8 @@ import Pagination from "react-js-pagination";
 import axios from 'axios';
 import List from './CharacterList/CharacterList';
 import classes from './Characters.module.css';
-import loadingIcon from '../../resources/images/loading_icon.gif'
+import loadingIcon from '../../resources/images/loading_icon.gif';
+import API_URL from '../../Services/ApiUrl'
 
 const Characters = (props) => {
     const [ data, setData ] = useState('')
@@ -23,7 +24,7 @@ const Characters = (props) => {
     }
 
     const getCharactersList = () => {
-        axios.get(`https://www.anapioficeandfire.com/api/characters?page=${pageno}&pageSize=10`)
+        axios.get(`${API_URL}/characters?page=${pageno}&pageSize=10`)
         .then(response => {
             setData(response.data)
             setisDataLoading(true)

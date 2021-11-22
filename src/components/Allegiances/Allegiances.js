@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import classes from './Allegiances.module.css';
 import loadingIcon from '../../resources/images/loading_icon.gif'
+import API_URL from '../../Services/ApiUrl'
 
 const Allegiances = () => {
     const [data, setData] = useState('')
@@ -10,7 +11,7 @@ const Allegiances = () => {
     const [ hasError, setHasError ] = useState(false)
 
     useEffect(() => {
-        axios.get('https://anapioficeandfire.com/api/houses/')
+        axios.get(`${API_URL}/houses/`)
         .then((response) => {
             setData(response.data)
             setisDataLoading(true)
