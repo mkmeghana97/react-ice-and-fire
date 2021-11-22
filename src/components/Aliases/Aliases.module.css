@@ -1,0 +1,30 @@
+.aliasesList {
+    display: none;
+    list-style-type: none;
+    padding-left: 0px;
+}
+.aliases.active + .aliasesList {
+    display: block;
+}
+.aliases::after {
+    content: '';
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin-left: 12px;
+    margin-bottom: 2px;
+}
+.aliases.active::after {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    margin-bottom: 0px;
+}
+.aliases {
+    cursor: pointer;
+}
+.aliasesList li {
+    line-height: 30px;
+}

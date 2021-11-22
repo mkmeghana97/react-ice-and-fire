@@ -1,0 +1,17 @@
+.tvSeries img {
+    width: 100%;
+    height: 209px;
+}
+.tvSeries div:first-child {
+    padding-left: 0px;
+}
+.seasonsButton {
+    width: 20px;
+    height: 20px;
+    background-color: purple;
+    border: 0px;
+}
+.seasonText {
+    margin-left: 12px;
+    font-weight: 600;
+}

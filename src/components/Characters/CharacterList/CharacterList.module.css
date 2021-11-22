@@ -1,0 +1,14 @@
+.list {
+    margin-top: 17px;
+}
+.list thead {
+    background: #f8f8f8;
+    color: #666;
+    padding: 10px 10px 10px 0px;
+}
+.list td, .list th, .list td, .list th {
+    font-weight: 500;
+    text-align: left;
+    padding: 10px 20px 10px 20px;
+    color: #666;
+}

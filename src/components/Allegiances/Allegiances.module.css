@@ -1,0 +1,31 @@
+.allegiancesBlock {
+    padding: 30px;
+}
+.allegiancesBlock div {
+    line-height: 30px;
+}
+.allegiancesBlock .founderDetails h3 {
+    margin-top: 20px;
+}
+.loadingIcon {
+    height: 30px;
+    margin: 50px auto 0px auto;
+    display: block;
+}
+.errorMsg {
+    color: red;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 50px;
+}
+.allegiancesBlock thead {
+    background: #f8f8f8;
+    color: #666;
+    padding: 10px 10px 10px 0px;
+}
+.allegiancesBlock td, .allegiancesBlock th, .allegiancesBlock td, .allegiancesBlock th {
+    font-weight: 500;
+    text-align: left;
+    padding: 10px 20px 10px 20px;
+    color: #666;
+}

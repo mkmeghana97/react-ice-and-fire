@@ -1,0 +1,14 @@
+.Header {
+    text-align: center;
+    height: 100px;
+    color: maroon;
+    background: silver;
+}
+.Header h1 {
+    font-style: italic;
+    padding-top: 8px;
+    margin-bottom: 0px;
+}
+.Header p {
+    line-height: 20px;
+}
