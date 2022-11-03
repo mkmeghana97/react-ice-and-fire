@@ -1,30 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
 import Aliases from '../Aliases/Aliases';
 import TvSeries from '../TvSeries/TvSeries';
 import banner from '../../resources/images/banner.jpg';
 import classes from './Home.module.css';
 import loadingIcon from '../../resources/images/loading_icon.gif';
-import API_URL from '../../Services/ApiUrl'
+import API_URL from '../../Services/ApiUrl';
+import { fetchHomepageData } from '../../store/actions';
 
 const Home = () => {
-    const [ data, setData ] = useState('')
-    const [ dataLoaded, setDataLoaded ] = useState(false)
-    const [ hasError, setHasError ] = useState(false)
+    debugger
+    // const [ data, setData ] = useState('')
+    // const [ dataLoaded, setDataLoaded ] = useState(false)
+    // const [ hasError, setHasError ] = useState(false)
+    const dispatch = useDispatch()
+    const data = useSelector(state => state.ui.homePageData)
+    const dataLoaded = useSelector(state => state.ui.dataLoaded)
+    const hasError = useSelector(state => state.ui.hasError)
+
+    // useEffect(() => {
+    //     setDataLoaded(false)
+    //     axios.get(`${API_URL}/characters/583`)
+    //     .then(response => {
+    //         setData(response.data)
+    //         setDataLoaded(true)
+    //     })
+    //     .catch(response => {
+    //         setHasError(true)
+    //         setDataLoaded(true)
+    //     })
+    // }, [])
 
     useEffect(() => {
-        setDataLoaded(false)
-        axios.get(`${API_URL}/characters/583`)
-        .then(response => {
-            setData(response.data)
-            setDataLoaded(true)
-        })
-        .catch(response => {
-            setHasError(true)
-            setDataLoaded(true)
-        })
-    }, [])
+        dispatch(fetchHomepageData())
+    }, [dispatch])
+
 
     return dataLoaded && !hasError ? (
         <>
